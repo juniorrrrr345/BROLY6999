@@ -1,0 +1,4 @@
+MONGO_URI=mongodb+srv://davon:Broly69@cluster0.qa5j3nm.mongodb.net/encoreetencore?retryWrites=true&w=majority&appName=Cluster0
+TELEGRAM_BOT_TOKEN=7556108523:AAHEtYdygrQUlWS1Ll_eC-Vo6qx7XIXgdsE
+NODE_ENV=development
+PORT=10000
