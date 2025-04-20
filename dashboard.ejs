@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .product { background: white; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+    .product img, .product video { max-width: 200px; display: block; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Liste des Produits</h1>
+  <% products.forEach(p => { %>
+    <div class="product">
+      <strong><%= p.name %></strong> - <%= p.price %>€
+      <% if (p.type === 'photo') { %>
+        <img src="<%= p.media %>" alt="photo">
+      <% } else { %>
+        <video src="<%= p.media %>" controls></video>
+      <% } %>
+      <form action="/api/products/<%= p._id %>" method="POST" onsubmit="return confirm('Supprimer ce produit ?');">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button type="submit">Supprimer</button>
+      </form>
+    </div>
+  <% }) %>
+</body>
+</html>
